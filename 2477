@@ -20,4 +20,22 @@ find minimum fuel to travel to node 0 . multiple people can go in one car.
 
 Soln:
 
-at each node if there are x people then it requires ceil( x / seats ) number of cars minimum.
+at each node if there are x people then it requires ceil( x / seats ) number of cars 
+minimum to go from that node to the parent node.
+
+at any given node there will be subtrees and all the nodes present in each subtree must go through
+the given node. 
+
+they might reach at different times. but it is optimal to wait every one to come and go in 
+minimum number of cars from that given node to its parent node.
+
+cars always travel to parent node from a given node because it wastes two units of fuel to go 
+down and come up where as from bottom to top they would have come in one unit of fuel.
+
+
+so for each child subtree of a given node we can get NUMBER OF PEOPLE from that child as a subprobelm
+
+once we get NUMBER OF PEOPLE we can use that to update the global cost it takes to come from 
+that child node to the given node and we can also add NUMBER OF PEOPE to the number of peopl comes
+to the current given node.
+
